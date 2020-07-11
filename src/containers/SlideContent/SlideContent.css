@@ -11,43 +11,20 @@
     -o-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
     border-style:solid;
 }
-.mainDiv {
-    position: relative;
-    margin: 0 auto;
-    width: 50%;
-    padding-bottom: 56.25%;
+.fixedRatio {
+    position: absolute;
+    display: flex;
+    background-color: blue;
+    width: 75%;
+    height: 100%;
+    left: 12.5%;
+}
+.fixedRatioInside {
+    flex: 1;
     background-color: orange;
-    /* background-image: url(../../assets/VolcanoModule/Images/TerrainMap-Labelled.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto 100%;  */
-    /* border-width:15px;
-    border-image:url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -moz-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -ms-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -o-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    border-style:solid; */
 }
-/* .mainContent {
-    position: absolute;
-    display: block;
+.test {
     height: 100%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-width:15px;
-    border-image:url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -moz-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -ms-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -o-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    border-style:solid;
-}
-.mainDiv {
-    position: absolute;
-    height: 100%;
-    width: 80%;
-    left: 10%;
+    max-width: 100%;
     overflow: hidden;
-    display: inline-block;
-    background-color: orange;
-} */
+}

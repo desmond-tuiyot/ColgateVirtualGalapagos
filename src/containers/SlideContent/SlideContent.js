@@ -53,8 +53,10 @@ class SlideContent extends Component {
         }
         else if (slide == 6) {
             return (
-                <div className={classes.mainDiv}>
-                    {/* <img className={classes.mainContent} src={TerrainMap} /> */}
+                <div className={classes.fixedRatio}>
+                    <div className={classes.fixedRatioInside} >
+                        <img src={TerrainMap} className={classes.test} />
+                    </div>
                 </div>
             )
         }
