@@ -53,7 +53,9 @@ class SlideContent extends Component {
         }
         else if (slide == 6) {
             return (
-                <img className={classes.mainContent} src={TerrainMap} />
+                <div className={classes.mainDiv}>
+                    {/* <img className={classes.mainContent} src={TerrainMap} /> */}
+                </div>
             )
         }
     }

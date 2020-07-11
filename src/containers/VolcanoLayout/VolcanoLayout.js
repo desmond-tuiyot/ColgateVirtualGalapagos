@@ -12,6 +12,7 @@ class VolcanoLayout extends Component {
         this.state = {
              audioPlaying: true,
              Completed: false,
+             hideAudio: true,
              progressIndex: 0,
              slideAudio: "",
              slideIndex: 0,
@@ -22,11 +23,11 @@ audioFinished() {
 }    
 nextSlide() {
     if (this.state.slideIndex == 0 && this.state.progressIndex > this.state.slideIndex) {
-        this.setState({audioPlaying: false, slideIndex: 1});
+        this.setState({audioPlaying: false, hideAudio: false, slideIndex: 1});
         setTimeout(() => this.setState({slideAudio: Exploration01}), 1)
     }
     else if (this.state.slideIndex == 0) {
-        this.setState({audioPlaying: true, Completed: false, progressIndex: 1, slideAudio: Exploration01, slideIndex: 1})
+        this.setState({audioPlaying: true, Completed: false, hideAudio: false, progressIndex: 1, slideAudio: Exploration01, slideIndex: 1})
     }
     else if (this.state.slideIndex == 1 && this.state.progressIndex > this.state.slideIndex) {
         this.setState({audioPlaying: false, slideIndex: 2});
@@ -56,11 +57,18 @@ nextSlide() {
     else if (this.state.slideIndex == 4) {
         this.setState({audioPlaying: true, Completed: false, progressIndex: 5, slideAudio: Exploration05, slideIndex: 5})
     }
+    else if (this.state.slideIndex == 5 && this.state.progressIndex > this.state.slideIndex) {
+        this.setState({audioPlaying: false, slideIndex: 6});
+        setTimeout(() => this.setState({slideAudio: terrainMap2}), 1)
+    }
+    else if (this.state.slideIndex == 5) {
+        this.setState({audioPlaying: true, Completed: false, progressIndex: 6, slideAudio: terrainMap2, slideIndex: 6})
+    }
 }
 prevSlide() {
     this.setState((prevState) => ({audioPlaying: false, slideIndex: this.state.slideIndex -1}));
     if (this.state.slideIndex == 1) {
-        setTimeout(() => this.setState({slideAudio: ""}), 1)
+        setTimeout(() => this.setState({hideAudio: true, slideAudio: ""}), 1)
     }
     else if (this.state.slideIndex == 2) {
         setTimeout(() => this.setState({slideAudio: Exploration01}), 1)
@@ -77,6 +85,9 @@ prevSlide() {
     else if (this.state.slideIndex == 6) {
         setTimeout(() => this.setState({slideAudio: Exploration05}), 1)
     }
+    else if (this.state.slideIndex == 7) {
+        setTimeout(() => this.setState({slideAudio: terrainMap2}), 1)
+    }
 }
 toggleAudio() {
     if (this.state.audioPlaying) {
@@ -88,10 +99,11 @@ toggleAudio() {
 }
     render() {
         const buttonStyle = {pointerEvents: "none", opacity: "0.3"} 
-        const {audioPlaying, Completed, slideAudio, slideIndex} = this.state
+        const {audioPlaying, Completed, hideAudio, slideAudio, slideIndex} = this.state
         return (
             <div className={classes.mainDiv}>
-                <AudioPlayer onEnded={() => this.audioFinished()} playing={audioPlaying} src={slideAudio} toggleAudio={() => this.toggleAudio()} />
+                <button style={{width: "100px", position: "absolute", right: "0"}} onClick={() => this.setState({hideAudio: false, slideAudio: Exploration05, progressIndex: 5, slideIndex: 5 })}>dev button</button>
+                <AudioPlayer hide={hideAudio} onEnded={() => this.audioFinished()} playing={audioPlaying} src={slideAudio} toggleAudio={() => this.toggleAudio()} />
                 <SlideContent slide={slideIndex} videoFinished={() => this.audioFinished()} />
                 <img className={classes.imgBack} onClick={() => this.prevSlide()} src={Back} style={Completed? {} : buttonStyle} />
                 <img className={classes.imgNext} onClick={() => this.nextSlide()} src={Next} style={Completed? {} : buttonStyle} />
