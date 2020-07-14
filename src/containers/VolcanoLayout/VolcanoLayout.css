@@ -18,6 +18,9 @@
 .imgBack:active, .imgNext:active {
     width: 140px;
 }
+.invisible {
+    visibility: hidden
+}
 .mainDiv {
     position: relative;
     height: 100%;
