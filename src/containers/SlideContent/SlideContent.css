@@ -1,3 +1,29 @@
+.buttonClass {
+    border-top: 1px solid #97d2f7;
+    background: #65a9d7;
+    background:linear-gradient(to bottom, #4c3e9c 5%, #65a9d7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#4c3e9c), to(#65a9d7));
+    background: -webkit-linear-gradient(top, #4c3e9c, #65a9d7);
+    background: -moz-linear-gradient(top, #4c3e9c, #65a9d7);
+    background: -ms-linear-gradient(top, #4c3e9c, #65a9d7);
+    background: -o-linear-gradient(top, #4c3e9c, #65a9d7);
+    padding: 10px 20px; 
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 18px;
+    font-family: Georgia, Serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.buttonClass:focus {
+    outline: 0;
+}
 .Image {
     position: absolute;
     left: 0;
@@ -15,108 +41,37 @@
     -o-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
     border-style:solid;
 }
-/* .resizeBody {   
-    position: relative;
-    background: gray;
-    flex-grow: 3;
-    display: flex;
-    flex-flow: row nowrap;
-    background-image: url(../../assets/VolcanoModule/Images/SantaCruz_Color.png);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: left top
+.slide6Image {
+    position: absolute; 
+    left: 20%;
+    width: 6%;
+    bottom: 20%;
 }
-.resizeMainContent {
+.slide9Button {
     position: absolute;
-    height: 100%;
-    margin: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-    border-width:15px;
-    border-image:url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -moz-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -ms-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    -o-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-    border-style:solid;
+    top: 80%;
+    left: 30%;
 }
-.resizeContainer {
-        position: relative;
-        margin: auto;
-        height: 100%;
-        display: flex;
-        flex-flow: nowrap column;
-        overflow:hidden;
-        
-        border-width:15px;
-        background-color: blue;
-        border-image:url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-        -moz-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-        -ms-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-        -o-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
-        border-style:solid;
-}
-.resizeCustomBorder {
-    cursor: ew-resize;
-    width: 5px;
-    background: gray;
-    display: flex;
-    z-index: 99999;
-    align-items: center ;
-    align-content: center ;
-    justify-content: center;
-    overflow: visible;
-}
-.resizeCustomHandle {
-    cursor: ew-resize;
-    width: 10px;
-    height: 100px;
-    margin: 0px -5px;
-    background: lightblue;
-    border: 2px solid gray;
-    border-radius: 2px;
-    text-align: center;
-    z-index: 99999;
-    overflow: hidden;
-    display: flex;
-    align-items: center ;
-}
-.resizeImage {
+.slide11Button {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    top:0;
-    left: 0;
-    z-index: 400;
+    bottom: 20px;
+    right: 10px
+}
+.slide13flexbox {
+    position: absolute;
+    top: 30%;
+    left: 30px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+    z-Index: 20;
+}
+.test {
     background-color: red;
-    background-image: url(../../assets/VolcanoModule/Images/ferd.png);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: left top
+    border: solid 1px;
+    width: 125px;
 }
-.resizeMainDiv  {
-    position: absolute;
-    height: 100%;
-    width: calc(100% - 256px);
-    left: 128px;
-    background-color: blue;
-}
-.resizePanel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.resizeSidebar {
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    left: 0;
-    background-color: blue;
-    border: 2px solid black;
-}
-.resizeWithMargin {
-    margin: 0
-} */
 .Video {
     position: absolute;
     left: 0;
@@ -134,20 +89,11 @@
 .Video:focus {
     outline: 0
 }
-/* .test {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top:0;
-    left: 0;
-    z-index: 400;
-    background-color: red;
-    background-image: url(../../assets/VolcanoModule/Images/ferd.png);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: left top
-} */
 
+
+
+
+/* Reize CSS */
 .mainDiv  {
     position: absolute;
     height: 100%;
@@ -186,7 +132,7 @@
 }
 .body {
     position: relative;
-    background: gray;
+    
     flex-grow: 3;
     display: flex;
     flex-flow: row nowrap;

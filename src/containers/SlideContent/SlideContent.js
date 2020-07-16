@@ -15,6 +15,7 @@ class SlideContent extends Component {
     }
     render() {
         const {Completed, optionalSlide, slide, videoFinished, widthRef, widthRef2} = this.props
+        const uncompleted = {opacity: "0.3", pointerEvents: "none"}
         if (slide == 0) {
             return (
                 <video controls controlsList="nodownload" className={classes.Video} onEnded={() => videoFinished()}>
@@ -55,25 +56,74 @@ class SlideContent extends Component {
         else if (slide == 6) {
             return (
                 <div className={classes.Image} style={{backgroundImage: `url(${TerrainMap})`, width: `${widthRef}px`}}>
-                    <img onClick={() => optionalSlide()} src={magnifyingGlass} style={Completed? {position: "absolute", left: "20%", bottom: "20%", width: "6%"} : {position: "absolute", left: "20%", bottom: "20%", width: "6%", opacity: "0.3", pointerEvents: "none"}} />
+                    <img className={classes.slide6Image} onClick={() => optionalSlide()} src={magnifyingGlass} style={Completed? {} : uncompleted} />
                 </div>
             )
         }
         else if (slide == 7) {
-            return (
-                // <div className={classes.mainDiv}>
+            return (  //Optional Slide. In the future, this should be made into is own component. It is very finicky, so I will leave it for now. -Giancarlo
                 <Fragment>
-                <img style={{zIndex: "-1"}} className={classes.mainContent} src={Ferd} />
-                <div style={{width: `${widthRef2}px`}} className={classes.container}>
-                    <div className={classes.body} >
-                        <ResizePanel direction="e" style={{ width: '400px' }} handleClass={classes.customHandle} borderClass={classes.customResizeBorder}>
-                            <div className={`${classes.sidebar} ${classes.withMargin} ${classes.panel}`}>
-                                <div className={classes.duck3} />
-                            </div>
-                        </ResizePanel>
+                    <img style={{zIndex: "-1"}} className={classes.mainContent} src={Ferd} />
+                    <div style={{width: `${widthRef2 -10}px`}} className={classes.container}>
+                        <div className={classes.body} >
+                            <ResizePanel direction="e" style={{ width: '400px' }} handleClass={classes.customHandle} borderClass={classes.customResizeBorder}>
+                                <div className={`${classes.sidebar} ${classes.withMargin} ${classes.panel}`}>
+                                    <div className={classes.duck3} />
+                                </div>
+                            </ResizePanel>
+                        </div>
                     </div>
-                 </div>
-            </Fragment>
+                </Fragment>
+            )
+        }
+        else if (slide == 8) {
+            const Vista1 = "https://virtualgalapagos.colgate.edu/360Videos/VolcanoModule/Caldara_Endtrail/index.htm"
+            const Vista2 = "https://virtualgalapagos.colgate.edu/360Videos/VolcanoModule/Cactus_Final/index.htm"
+            return (
+                <VolcanoeIframe splitScreen={true} src1={Vista1} src2={Vista2} />
+            )
+        }
+        else if (slide == 9) {
+            return (
+                <div className={classes.Image} style={{backgroundImage: `url(${TerrainMap})`, width: `${widthRef}px`}}>
+                    <button style={Completed? {} : uncompleted} className={`${classes.buttonClass} ${classes.slide9Button}`} onClick={() => optionalSlide()}>Compare Observations</button>
+                </div>
+            )
+        }
+        else if (slide == 10) {
+            return ( //Optional Slide
+                <div className={classes.Image} style={{backgroundImage: `url(${Ferd})`, width: `${widthRef2}px`}} />
+            )
+        }
+        else if (slide == 11) {
+            return ( //Optional Slide
+                <div className={classes.Image} style={{backgroundImage: `url(${santaCruz})`, width: `${widthRef2}px`}} >
+                    <button style={Completed? {} : uncompleted} className={`${classes.buttonClass} ${classes.slide11Button}`} onClick={() => optionalSlide()}>Back to Slide 10</button>
+                </div>
+            )
+        }
+        else if (slide == 12) {
+            return ( 
+                <div className={classes.Image} style={{backgroundImage: `url(${TerrainMap})`, width: `${widthRef}px`}} >
+     
+                </div>
+            )
+        }
+        else if (slide == 13) {
+            return ( 
+                <Fragment>
+                    <div className={classes.slide13flexbox}>
+                        <div className={classes.test} >test</div>
+                        <div className={classes.test} >test</div>
+                        <div className={classes.test} >test</div>
+                        <div className={classes.test} >test</div>
+                        <div className={classes.test} >test</div>
+                        <div className={classes.test} >test</div>
+                    </div>
+                        <div className={classes.Image} style={{backgroundImage: `url(${DnD})`, width: `${widthRef}px`}}>
+
+                        </div>
+                </Fragment>
             )
         }
     }

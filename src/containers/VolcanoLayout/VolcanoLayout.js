@@ -75,6 +75,34 @@ nextSlide() {
     else if (this.state.slideIndex == 6) {
         this.setState({audioPlaying: true, Completed: false, progressIndex: 8, slideAudio: volcanoCompare360, slideIndex: 8})
     }
+    else if (this.state.slideIndex == 8 && this.state.progressIndex > this.state.slideIndex) {
+        this.setState({audioPlaying: false, slideIndex: 9});
+        setTimeout(() => this.setState({slideAudio: terrainMap3}), 1)
+    }
+    else if (this.state.slideIndex == 8) {
+        this.setState({audioPlaying: true, Completed: false, progressIndex: 9, slideAudio: terrainMap3, slideIndex: 9})
+    }
+    else if (this.state.slideIndex == 9 && this.state.progressIndex > this.state.slideIndex) {
+        this.setState({audioPlaying: false, slideIndex: 12});
+        setTimeout(() => this.setState({slideAudio: terrainMap4}), 1)
+    }
+    else if (this.state.slideIndex == 9) {
+        this.setState({audioPlaying: true, Completed: false, progressIndex: 12, slideAudio: terrainMap4, slideIndex: 12})
+    }
+    else if (this.state.slideIndex == 10 && this.state.optional3) {
+        this.setState({audioPlaying: false, hideNext: true, slideIndex: 11});
+        setTimeout(() => this.setState({slideAudio: santaCruz1}), 1)
+    }
+    else if (this.state.slideIndex == 10) {
+        this.setState({audioPlaying: true, Completed: false, hideNext: true, optional3: true, slideAudio: santaCruz1, slideIndex: 11})
+    }
+    else if (this.state.slideIndex == 12 && this.state.progressIndex > this.state.slideIndex) {
+        this.setState({audioPlaying: false, slideIndex: 13});
+        setTimeout(() => this.setState({slideAudio: terrainMapAges1}), 1)
+    }
+    else if (this.state.slideIndex == 12) {
+        this.setState({audioPlaying: true, Completed: false, progressIndex: 13, slideAudio: terrainMapAges1, slideIndex: 13})
+    }
 }
 prevSlide() {
     this.setState((prevState) => ({audioPlaying: false, slideIndex: this.state.slideIndex -1}));
@@ -99,6 +127,24 @@ prevSlide() {
     else if (this.state.slideIndex == 7) {
         setTimeout(() => this.setState({hideNext: false, slideAudio: terrainMap2}), 1)
     }
+    else if (this.state.slideIndex == 8) {
+        setTimeout(() => this.setState({slideAudio: terrainMap2, slideIndex: 6}), 1)
+    }
+    else if (this.state.slideIndex == 9) {
+        setTimeout(() => this.setState({slideAudio: volcanoCompare360}), 1)
+    }
+    else if (this.state.slideIndex == 10) {
+        setTimeout(() => this.setState({slideAudio: terrainMap3}), 1)
+    }
+    else if (this.state.slideIndex == 11) {
+        setTimeout(() => this.setState({hideNext: false, slideAudio: fernandina1}), 1)
+    }
+    else if (this.state.slideIndex == 12) {
+        setTimeout(() => this.setState({slideAudio: fernandina1, slideIndex: 9}), 1)
+    }
+    else if (this.state.slideIndex == 13) {
+        setTimeout(() => this.setState({slideAudio: terrainMap4}), 1)
+    }
 }
 optionalSlide() {
     if (this.state.slideIndex == 6 && this.state.optional1) {
@@ -107,6 +153,17 @@ optionalSlide() {
     }
     else if (this.state.slideIndex == 6) {
         this.setState({audioPlaying: true, Completed: false, hideNext: true, optional1: true, slideAudio: volcanoSlider1, slideIndex: 7})
+    }
+    else if (this.state.slideIndex == 9 && this.state.optional2) {
+        this.setState({audioPlaying: false, slideIndex: 10});
+        setTimeout(() => this.setState({slideAudio: fernandina1}), 1)
+    }
+    else if (this.state.slideIndex == 9) {
+        this.setState({audioPlaying: true, Completed: false, optional2: true, slideAudio: fernandina1, slideIndex: 10})
+    }
+    else if (this.state.slideIndex == 11) {
+        this.setState((prevState) => ({audioPlaying: false, hideNext: false, slideIndex: this.state.slideIndex -2}));
+        setTimeout(() => this.setState({slideAudio: terrainMap3}), 1)
     }
 }
 toggleAudio() {
@@ -133,7 +190,7 @@ componentWillUnmount () {
         const {audioPlaying, Completed, hideAudio, hideBack, hideNext, slideAudio, slideIndex, usedForWidth, usedForWidth2} = this.state
         return (
             <div className={classes.mainDiv}>
-                <button style={{width: "100px", position: "absolute", right: "0"}} onClick={() => this.setState({hideAudio: false, hideBack: false, slideAudio: Exploration05, progressIndex: 6, slideIndex: 6 })}>dev button</button>
+                <button style={{width: "100px", position: "absolute", right: "0"}} onClick={() => this.setState({hideAudio: false, hideBack: false, slideAudio: Exploration05, progressIndex: 13, slideIndex: 13})}>dev button</button>
                 <AudioPlayer hide={hideAudio} onEnded={() => this.audioFinished()} playing={audioPlaying} src={slideAudio} toggleAudio={() => this.toggleAudio()} />
                 <SlideContent Completed={Completed} optionalSlide={() => this.optionalSlide()} slide={slideIndex} videoFinished={() => this.audioFinished()} widthRef={usedForWidth} widthRef2={usedForWidth2} />
                 <img className={hideBack? classes.invisible : classes.imgBack} onClick={() => this.prevSlide()} src={Back} style={Completed? {} : buttonStyle} />
