@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react'
 import { Back, Next, TerrainMap, magnifyingGlass, Ferd, santaCruz, VolcanoCompare, tectonicPlatesMap, convergent, convergent2, convergent2fix, divergent, transform, seaMounts, eruptionDates, TerrainOval, TerrainOvalCorrect, TerrainOvalWrong, XImage, DnDAnswers, DnD} from "../../assets/VolcanoModule/Images"
 import { introVideo, plateTectonics, mantlePlumes} from "../../assets/VolcanoModule/Videos/index"
 import classes from "./SlideContent.css"
+import DndLayout from "../../components/DndLayout/DndLayout.js"
+import DndDroppables from "../../components/DndDroppables/DndDroppables"
 import ResizePanel from "react-resize-panel";
 import VolcanoeIframe from "../../components/VolcanoeIframe/VolcanoeIframe"
 
@@ -14,7 +16,7 @@ class SlideContent extends Component {
         }
     }
     render() {
-        const {Completed, optionalSlide, slide, videoFinished, widthRef, widthRef2} = this.props
+        const {Completed, Dnd, DndFunction, optionalSlide, slide, videoFinished, widthRef, widthRef2} = this.props
         const uncompleted = {opacity: "0.3", pointerEvents: "none"}
         if (slide == 0) {
             return (
@@ -111,19 +113,7 @@ class SlideContent extends Component {
         }
         else if (slide == 13) {
             return ( 
-                <Fragment>
-                    <div className={classes.slide13flexbox}>
-                        <div className={classes.test} >test</div>
-                        <div className={classes.test} >test</div>
-                        <div className={classes.test} >test</div>
-                        <div className={classes.test} >test</div>
-                        <div className={classes.test} >test</div>
-                        <div className={classes.test} >test</div>
-                    </div>
-                        <div className={classes.Image} style={{backgroundImage: `url(${DnD})`, width: `${widthRef}px`}}>
-
-                        </div>
-                </Fragment>
+                <DndLayout audioFinished={() => DndFunction()} volcanoSlide13={true} Completed={Dnd} src={DnD} widthRef={widthRef} />
             )
         }
     }

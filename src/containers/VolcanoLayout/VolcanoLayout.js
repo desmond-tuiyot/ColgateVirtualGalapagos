@@ -15,6 +15,7 @@ class VolcanoLayout extends Component {
              audioPlaying: true,
              Completed: false,
              hideAudio: true, hideBack: true, hideNext: false,
+             Dnd: false,
              optional1: false, optional2: false, optional3: false, optional4: false,
              progressIndex: 0,
              slideAudio: "",
@@ -23,8 +24,16 @@ class VolcanoLayout extends Component {
         }
     }
 audioFinished() {
-    this.setState({Completed: true, audioPlaying: false})
+    if (this.state.slideIndex == 13) {
+        this.setState({Dnd: true, audioPaying: false})
+    }
+    else {
+        this.setState({Completed: true, audioPlaying: false})
+    }
 }    
+Dnd() {
+    this.setState({Completed: true})
+}
 nextSlide() {
     if (this.state.slideIndex == 0 && this.state.progressIndex > this.state.slideIndex) {
         this.setState({audioPlaying: false, hideAudio: false, hideBack: false, slideIndex: 1});
@@ -187,12 +196,12 @@ componentWillUnmount () {
 }
     render() {
         const buttonStyle = {pointerEvents: "none", opacity: "0.3"} 
-        const {audioPlaying, Completed, hideAudio, hideBack, hideNext, slideAudio, slideIndex, usedForWidth, usedForWidth2} = this.state
+        const {audioPlaying, Completed, Dnd, hideAudio, hideBack, hideNext, slideAudio, slideIndex, usedForWidth, usedForWidth2} = this.state
         return (
             <div className={classes.mainDiv}>
                 <button style={{width: "100px", position: "absolute", right: "0"}} onClick={() => this.setState({hideAudio: false, hideBack: false, slideAudio: Exploration05, progressIndex: 13, slideIndex: 13})}>dev button</button>
                 <AudioPlayer hide={hideAudio} onEnded={() => this.audioFinished()} playing={audioPlaying} src={slideAudio} toggleAudio={() => this.toggleAudio()} />
-                <SlideContent Completed={Completed} optionalSlide={() => this.optionalSlide()} slide={slideIndex} videoFinished={() => this.audioFinished()} widthRef={usedForWidth} widthRef2={usedForWidth2} />
+                <SlideContent Completed={Completed} Dnd={Dnd} DndFunction={() => this.Dnd()} optionalSlide={() => this.optionalSlide()} slide={slideIndex} videoFinished={() => this.audioFinished()} widthRef={usedForWidth} widthRef2={usedForWidth2} />
                 <img className={hideBack? classes.invisible : classes.imgBack} onClick={() => this.prevSlide()} src={Back} style={Completed? {} : buttonStyle} />
                 <img className={hideNext? classes.invisible : classes.imgNext} onClick={() => this.nextSlide()} src={Next} style={Completed? {} : buttonStyle} />
                     {/* Using these as references for width */}

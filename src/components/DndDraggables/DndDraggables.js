@@ -6,23 +6,18 @@ const DndDraggables = props => {
 
         const [{isDragging}, drag] = useDrag({
             item: {type: ItemTypes.VOLCANO},
-            collect: monitor => ({
-                isDragging: !!monitor.isDragging()
-            }),
-            begin: () => props.updateDragIndex(),
+            // collect: monitor => ({
+            //     isDragging: !!monitor.isDragging()
+            // }),
+            begin: () => props.function(),
             canDrag: () => {
-                   return props.isReady
+                   return props.Completed
                 },
         });
-    const style1 = {opacity: "0.5"}
-    if (props.answered) {
-        return (
-            <div style={isDragging? style1: {} } className={props.isReady? props.readyClass : props.class}></div>
-        )
-    }
-    else {
+   
+if (props.div) {
     return (
-        <div ref={drag} style={isDragging? style1: {} } className={props.isReady? props.readyClass : props.class}>{props.text}</div>
+            <div ref={drag} style={props.secret? {visibility: "hidden"} : {}} className={props.Completed? props.readyClass : props.class}>{props.text}</div>
     )}
 }
 

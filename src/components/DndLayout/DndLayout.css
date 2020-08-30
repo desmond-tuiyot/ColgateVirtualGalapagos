@@ -1,0 +1,223 @@
+.invisible {
+    visibility: hidden;
+    height: 0px;
+}
+.Image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    height: 100%;
+    background-position: auto, 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-width:15px;
+    border-image:url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
+    -moz-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
+    -ms-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
+    -o-border-image: url(http://blogrope.com/wp-content/uploads/2013/06/003-wood-melamine-subttle-pattern-background-pat.jpg) 30 30 stretch;
+    border-style:solid;
+}
+.slide13flexbox {
+    position: absolute;
+    top: 30%;
+    left: 30px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    z-Index: 20;
+}
+.wordBankHeader {
+    width: 125px;
+    text-align: center;
+    font-size: 24px;
+    background-color: blue;
+    pointer-events: none;
+    border: solid 1px;
+}
+.wordBankHeaderready {
+    width: 125px;
+    text-align: center;
+    font-size: 24px;
+    background-color: red;
+    border: solid 1px;
+}
+.slide13info {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 25%;
+    width: 25%;
+    background-color: blue;
+}
+.slide13infosecret {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 25%;
+    width: 25%;
+    border: solid  red 1px;
+    text-align: center;
+    font-size: 32px;
+    background-color: red;
+}
+.secretImage{ 
+    position: absolute;
+    width: 25%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1000;
+}
+.slide13drag {
+    opacity: 0.3;
+    pointer-events: none;
+    border: solid 1px;
+    width: 125px;
+    background-color: orange;
+    text-align: center;
+}
+.slide13dragready {
+    border: solid 1px;
+    width: 125px;
+    background-color: orange;
+    text-align: center;
+    overflow: hidden;
+}
+.slide13dragready:active {
+   opacity: 0.5;
+}
+.slide13drop1{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 36.5%;
+    right: 36.5%;
+    background-color: red;
+    z-index: 3;
+    border: solid 1px;
+}
+.slide13drop1done{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 36.5%;
+    right: 36.5%;
+    z-index: 3;
+    text-align: center;
+    overflow: hidden;
+    background-color: orange;
+    border: solid 1px;
+}
+.slide13drop2{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 54%;
+    right: 27%;
+    background-color: orange;
+    z-index: 3;
+    border: solid 1px;
+}
+.slide13drop2done{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 54%;
+    right: 27%;
+    z-index: 3;
+    text-align: center;
+    background-color: orange;
+    overflow: hidden;
+    border: solid 1px;
+}
+.slide13drop3{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 66%;
+    right: 4.5%;
+    background-color: yellow;
+    z-index: 3;
+    border: solid 1px;
+}
+.slide13drop3done{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 66%;
+    right: 4.5%;
+    text-align: center;
+    background-color: orange;
+    overflow: hidden;
+    border: solid 1px;
+}
+.slide13drop4{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 88%;
+    right: 22%;
+    background-color: green;
+    z-index: 3;
+    border: solid 1px;
+}
+.slide13drop4done{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 88%;
+    right: 22%;
+    text-align: center;
+    z-index: 3;
+    overflow: hidden;
+    background-color: orange;
+    border: solid 1px;
+}
+.slide13drop5{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 78%;
+    right: 61%;
+    background-color:blue;
+    z-index: 3;
+    border: solid 1px;
+}
+.slide13drop5done{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 78%;
+    right: 61%;
+    text-align: center;
+    z-index: 3;
+    overflow: hidden;
+    background-color: orange;
+    border: solid 1px;
+}
+.slide13drop6{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 38.5%;
+    right: 75.5%;
+    background-color: purple;
+    z-index: 3;
+    border: solid 1px;
+}
+.slide13drop6done{
+    position: absolute;
+    width: 10.5%;
+    height: 4.1%;
+    top: 38.5%;
+    right: 75.5%;
+    text-align:  center;
+    z-index: 3;
+    overflow: hidden;
+    background-color: orange;
+    border: solid 1px;
+}
+/* End Volcano Slide13 */

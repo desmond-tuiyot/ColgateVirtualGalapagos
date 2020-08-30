@@ -7,44 +7,23 @@ const DndDroppables = props => {
     const [{isOver}, drop] = useDrop({
         accept: ItemTypes.VOLCANO,
         drop: () => {
-            if (props.dropIndex == props.dragIndex) {
-                console.log("Right Answer");
-                props.unlock()
-            }
-            else {
-                console.log("Wrong Answer")
-            }
+           if (props.progressIndex >= 5) {
+               props.unlock();
+               props.finished();
+           }
+           else if (props.dragIndex == props.dropIndex) {
+               props.unlock()
+           }
         },
         collect: monitor => ({
             isOver: monitor.isOver(),
         }),
     });
-
-    const style1 = {opacity: "0.5"}
-    const style2 = {opacity: "1"}
-    if (props.answered) {
+    if (props.div) {
         return (
-        <div className={props.divClass}>
-            <h1 className={props.answerClass}>{props.text}</h1>
-            <img style={isOver? style1 : style2} ref={drop} src={props.src} className={props.class}  />
-        </div>
-    )}
-    else if (props.answered1) {
-        return (
-        <div ref={drop} className={props.answerClass}>{props.text}</div>
+            <div ref={drop} style={isOver? {opacity: "0.5"} : {}} className={props.class}>{props.text}</div>
         )
     }
-    else if (props.slide10) {
-        return (
-        <div style={isOver? style1 : style2} ref={drop} className={props.class} />
-        )
-    }
-    else {
-    return (
-        <div className={props.divClass}>
-            <img style={isOver? style1 : style2} ref={drop} src={props.src} className={props.class}/>
-        </div>
-    )}
 }
 
 export default DndDroppables
